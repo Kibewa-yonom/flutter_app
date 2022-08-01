@@ -64,10 +64,10 @@ class MyPageScreen extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 28,
                           backgroundColor:
-                              Theme.of(context).accentColor.withOpacity(0.2),
+                              Theme.of(context).primaryColor.withOpacity(0.2),
                           child: IconButton(
                             icon: Icon(Icons.receipt_sharp),
-                            color: Theme.of(context).accentColor,
+                            color: Theme.of(context).primaryColor,
                             onPressed: () {},
                           ),
                         ),
@@ -79,14 +79,21 @@ class MyPageScreen extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      CircleAvatar(
-                        radius: 28,
-                        backgroundColor:
-                            Theme.of(context).accentColor.withOpacity(0.2),
-                        child: IconButton(
-                          icon: Icon(Icons.shopping_bag),
-                          color: Theme.of(context).accentColor,
-                          onPressed: () {},
+                      Listener(
+                        onPointerUp: (PointerUpEvent event) {
+                          Navigator.of(context).pushNamed(
+                            SellListScreen.routeName,
+                          );
+                        },
+                        child: CircleAvatar(
+                          radius: 28,
+                          backgroundColor:
+                              Theme.of(context).primaryColor.withOpacity(0.2),
+                          child: IconButton(
+                            icon: Icon(Icons.shopping_bag),
+                            color: Theme.of(context).primaryColor,
+                            onPressed: () {},
+                          ),
                         ),
                       ),
                       SizedBox(height: 10),
@@ -99,10 +106,10 @@ class MyPageScreen extends StatelessWidget {
                       CircleAvatar(
                         radius: 28,
                         backgroundColor:
-                            Theme.of(context).accentColor.withOpacity(0.2),
+                            Theme.of(context).primaryColor.withOpacity(0.2),
                         child: IconButton(
                           icon: Icon(Icons.favorite),
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).primaryColor,
                           onPressed: () {},
                         ),
                       ),

@@ -1,19 +1,19 @@
-import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class ChatItem {
-  final String profileImagePath;
-  final String name;
-  final String location;
-  final String time;
-  final String itemImagePath;
-  final String messageLatest;
+part 'chat_item.freezed.dart';
+part 'chat_item.g.dart';
 
-  const ChatItem({
-    required this.profileImagePath,
-    required this.name,
-    required this.location,
-    required this.time,
-    required this.itemImagePath,
-    required this.messageLatest,
-  });
+@freezed
+class ChatItem with _$ChatItem {
+  factory ChatItem({
+    required String profileImagePath,
+    required String name,
+    required String location,
+    required String time,
+    required String itemImagePath,
+    required String messageLatest,
+  }) = _ChatItem;
+
+  factory ChatItem.fromJson(Map<String, dynamic> json) =>
+      _$ChatItemFromJson(json);
 }

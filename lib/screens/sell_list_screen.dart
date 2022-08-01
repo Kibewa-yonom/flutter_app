@@ -25,11 +25,14 @@ class SellListScreen extends StatelessWidget {
             labelColor: Colors.black,
             unselectedLabelColor: Colors.black26,
             labelStyle: TextStyle(fontWeight: FontWeight.w900),
+            indicatorColor: Theme.of(context).primaryColor,
             tabs: [
               Tab(
                 text: '판매중',
               ),
-              Tab(text: '거래완료'),
+              Tab(
+                text: '거래완료',
+              ),
             ],
           ),
         ),

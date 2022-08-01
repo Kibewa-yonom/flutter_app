@@ -1,7 +1,7 @@
 import './models/home_item.dart';
 import './models/chat_item.dart';
 
-const DUMMY_HOMEITEMS = const [
+var DUMMY_HOMEITEMS = [
   HomeItem(
     imagePath: 'assets/images/homeitem1.jpg',
     title: '맥북에어 스그 기본형',
@@ -9,6 +9,7 @@ const DUMMY_HOMEITEMS = const [
     time: '1분 전',
     price: '1,060,000원',
     likes: 2,
+    id: 'h1',
   ),
   HomeItem(
     imagePath: 'assets/images/homeitem2.jpg',
@@ -17,10 +18,11 @@ const DUMMY_HOMEITEMS = const [
     time: '끌올 1분 전',
     price: '900,000원',
     likes: 10,
+    id: 'h2',
   ),
 ];
 
-const DUMMY_CHAT = const [
+var DUMMY_CHAT = [
   ChatItem(
     profileImagePath: 'assets/images/profile1.jpg',
     name: '바다',

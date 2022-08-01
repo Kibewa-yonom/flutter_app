@@ -1,3 +1,4 @@
+import 'package:demo_app/screens/product_register_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
@@ -87,7 +88,7 @@ class _TabsScreenState extends State<TabsScreen> {
       body: _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.black,
         selectedFontSize: 12,
         unselectedFontSize: 12,
@@ -109,17 +110,20 @@ class _TabsScreenState extends State<TabsScreen> {
         ],
       ),
       floatingActionButton:
-          _getFAB(_pages[_selectedPageIndex]['isFloating'] as bool),
+          _getFAB(context, _pages[_selectedPageIndex]['isFloating'] as bool),
     );
   }
 }
 
-Widget? _getFAB(bool isFloating) {
+Widget? _getFAB(BuildContext context, bool isFloating) {
   if (isFloating) {
     return FloatingActionButton(
       child: Icon(Icons.add),
       foregroundColor: Colors.white,
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).pushNamed(
+        ProductRegisterScreen.routeName,
+      ),
+      backgroundColor: Theme.of(context).primaryColor,
     );
   }
 }
