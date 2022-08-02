@@ -1,3 +1,4 @@
+import 'package:demo_app/screens/history_screen.dart';
 import 'package:demo_app/screens/product_detail_screen.dart';
 import 'package:demo_app/screens/product_register_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +16,11 @@ void main() {
         SellListScreen.routeName: (ctx) => SellListScreen(),
         ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
         ProductRegisterScreen.routeName: (ctx) => ProductRegisterScreen(),
+        HistoryScreen.routename: (ctx) => HistoryScreen(),
       },
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(155, 89, 182, 1),
+        // primaryColor: Color.fromRGBO(155, 89, 182, 1),
+        primaryColor: Colors.amber,
       ),
     ),
   );

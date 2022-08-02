@@ -18,7 +18,7 @@ class HomeItem with _$HomeItem {
     required bool like, //관심 여부
     required String category,
     required int item_status, //판매중, 거래완료
-    required int user_id,
+    required String user_id,
   }) = _HomeItem;
 
   factory HomeItem.fromJson(Map<String, dynamic> json) =>
