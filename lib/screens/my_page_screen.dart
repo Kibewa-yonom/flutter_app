@@ -15,7 +15,7 @@ class MyPageScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('assets/images/profile1.jpg'),
+                    backgroundImage: AssetImage('assets/images/profile1.png'),
                   ),
                   SizedBox(width: 15),
                   Column(
@@ -29,19 +29,9 @@ class MyPageScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 5),
-                      Row(
-                        children: [
-                          Text(
-                            "성수동1가",
-                            style:
-                                TextStyle(color: Colors.black38, fontSize: 12),
-                          ),
-                          Text(
-                            "#7716595",
-                            style:
-                                TextStyle(color: Colors.black38, fontSize: 12),
-                          ),
-                        ],
+                      Text(
+                        "신뢰도 보통",
+                        style: TextStyle(color: Colors.black38, fontSize: 12),
                       ),
                     ],
                   ),
@@ -64,10 +54,10 @@ class MyPageScreen extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 28,
                           backgroundColor:
-                              Theme.of(context).primaryColor.withOpacity(0.2),
+                              Theme.of(context).focusColor.withOpacity(0.2),
                           child: IconButton(
                             icon: Icon(Icons.receipt_sharp),
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).focusColor,
                             onPressed: () {},
                           ),
                         ),
@@ -88,10 +78,10 @@ class MyPageScreen extends StatelessWidget {
                         child: CircleAvatar(
                           radius: 28,
                           backgroundColor:
-                              Theme.of(context).primaryColor.withOpacity(0.2),
+                              Theme.of(context).focusColor.withOpacity(0.2),
                           child: IconButton(
                             icon: Icon(Icons.shopping_bag),
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).focusColor,
                             onPressed: () {},
                           ),
                         ),
@@ -106,10 +96,10 @@ class MyPageScreen extends StatelessWidget {
                       CircleAvatar(
                         radius: 28,
                         backgroundColor:
-                            Theme.of(context).primaryColor.withOpacity(0.2),
+                            Theme.of(context).focusColor.withOpacity(0.2),
                         child: IconButton(
                           icon: Icon(Icons.favorite),
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).focusColor,
                           onPressed: () {},
                         ),
                       ),

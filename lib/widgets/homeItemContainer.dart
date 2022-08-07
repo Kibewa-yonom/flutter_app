@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../models/home_item.dart';
+import '../models/goods.dart';
 
-class HomeItemContainer extends StatelessWidget {
-  final HomeItem item;
-  HomeItemContainer(this.item);
+class GoodsContainer extends StatelessWidget {
+  final Goods goods;
+  GoodsContainer(this.goods);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +24,7 @@ class HomeItemContainer extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
             ),
             child: Image.asset(
-              item.imagePath,
+              goods.imagePath[0],
               height: 110,
               width: 110,
               fit: BoxFit.cover,
@@ -36,27 +36,23 @@ class HomeItemContainer extends StatelessWidget {
               children: [
                 SizedBox(height: 18),
                 Text(
-                  item.title,
+                  goods.title,
                   style: TextStyle(fontSize: 15),
                 ),
                 Row(
                   children: [
                     Text(
-                      item.location,
-                      style: TextStyle(color: Colors.black38, fontSize: 12),
-                    ),
-                    Text(
                       ' · ',
                       style: TextStyle(color: Colors.black38, fontSize: 12),
                     ),
                     Text(
-                      item.time,
+                      goods.time,
                       style: TextStyle(color: Colors.black38, fontSize: 12),
                     ),
                   ],
                 ),
                 Text(
-                  item.price,
+                  goods.price,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 25),
@@ -69,7 +65,7 @@ class HomeItemContainer extends StatelessWidget {
                       size: 20,
                     ),
                     SizedBox(width: 2),
-                    Text(item.likes.toString()),
+                    Text(goods.likes.toString()),
                     SizedBox(width: 10),
                   ],
                 ),

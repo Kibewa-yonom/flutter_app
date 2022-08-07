@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../models/home_item.dart';
+import '../models/goods.dart';
 import '../dummy_data.dart';
 import '../screens/product_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  final _homeItems = DUMMY_HOMEITEMS;
+  final _goods = DUMMY_GOODS;
 
-  Widget buildHomeItemContainer(BuildContext context, HomeItem item) {
-    return GestureDetector(
+  Widget buildGoodsContainer(BuildContext context, Goods goods) {
+    return InkWell(
       onTap: () => Navigator.of(context).pushNamed(
         ProductDetailScreen.routeName,
+        arguments: goods.goods_id,
       ),
       child: Container(
         height: 140,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: Colors.black12,
-            ),
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   border: Border(
+        //     bottom: BorderSide(
+        //       color: Colors.black12,
+        //       // color: Theme.of(context).dividerColor,
+        //     ),
+        //   ),
+        // ),
         child: Row(
           children: <Widget>[
             Container(
@@ -28,11 +30,14 @@ class HomeScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
-              child: Image.asset(
-                item.imagePath,
-                height: 110,
-                width: 110,
-                fit: BoxFit.cover,
+              child: ClipRRect(
+                child: Image.asset(
+                  goods.imagePath[0],
+                  height: 110,
+                  width: 110,
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
             ),
             Expanded(
@@ -41,27 +46,19 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: 18),
                   Text(
-                    item.title,
+                    goods.title,
                     style: TextStyle(fontSize: 15),
                   ),
                   Row(
                     children: [
                       Text(
-                        item.location,
-                        style: TextStyle(color: Colors.black38, fontSize: 12),
-                      ),
-                      Text(
-                        ' · ',
-                        style: TextStyle(color: Colors.black38, fontSize: 12),
-                      ),
-                      Text(
-                        item.time,
+                        goods.time,
                         style: TextStyle(color: Colors.black38, fontSize: 12),
                       ),
                     ],
                   ),
                   Text(
-                    item.price,
+                    goods.price,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 25),
@@ -74,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                         size: 20,
                       ),
                       SizedBox(width: 2),
-                      Text(item.likes.toString()),
+                      Text(goods.likes.toString()),
                       SizedBox(width: 10),
                     ],
                   ),
@@ -89,23 +86,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-          buildHomeItemContainer(context, _homeItems[1]),
-          buildHomeItemContainer(context, _homeItems[0]),
-        ],
+    return Container(
+      child: ListView.builder(
+        itemCount: _goods.length,
+        itemBuilder: (BuildContext context, int i) {
+          return buildGoodsContainer(context, _goods[i]);
+        },
       ),
     );
   }

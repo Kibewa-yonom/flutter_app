@@ -20,7 +20,10 @@ void main() {
       },
       theme: ThemeData(
         // primaryColor: Color.fromRGBO(155, 89, 182, 1),
-        primaryColor: Colors.amber,
+        primaryColor: Color(0xff513252),
+        focusColor: Color(0xffCA4E79),
+        secondaryHeaderColor: Color(0xffFFC18E),
+        dividerColor: Color(0xff7A4069),
       ),
     ),
   );
