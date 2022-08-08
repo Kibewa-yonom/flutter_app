@@ -141,7 +141,7 @@ var DUMMY_CHAT = [
     name: '바다',
     location: '성수동2가',
     time: '1일 전',
-    itemImagePath: 'assets/images/goods1_1.png',
+    itemImagePath: 'assets/images/goods1-1.png',
     messageLatest: '네',
   ),
   ChatItem(

@@ -1,6 +1,5 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:demo_app/screens/product_register_screen.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
@@ -73,17 +72,16 @@ class _TabsScreenState extends State<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: false,
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
-        elevation: 0,
-        shape: Border(
-          bottom: BorderSide(
-            color: Colors.black26,
-          ),
-        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Colors.white,
+        elevation: 2,
         title: Text(
           _pages[_selectedPageIndex]['title'] as String,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Jalnan',
+          ),
         ),
         actions: _pages[_selectedPageIndex]['actions'] as List<Widget>,
       ),
