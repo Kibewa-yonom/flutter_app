@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/chat_list_screen.dart';
-import '../screens/my_page_screen.dart';
+import '../screens/my_page/my_page_screen.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Map<String, Object>> _pages = [
     {
       'page': HomeScreen(),
-      'title': '체인마켓',
+      'title': '체셔마켓',
       'actions': <Widget>[
         IconButton(
           visualDensity: VisualDensity(horizontal: -3),
