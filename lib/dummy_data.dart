@@ -140,7 +140,8 @@ var DUMMY_HISTORY = [
   History(
     goods_id: 'g1',
     user_id: 'u1',
-    image: 'assets/images/goods1-1.png',
+    goods_image_path: 'assets/images/goods1-1.png',
+    user_image_path: 'assets/images/profile1.png',
     when: '19.8.3',
     number: 1,
     who: '거래쿨',
@@ -149,7 +150,8 @@ var DUMMY_HISTORY = [
   History(
     goods_id: 'g1',
     user_id: 'u2',
-    image: 'assets/images/profile2.png',
+    goods_image_path: 'assets/images/goods1-1.png',
+    user_image_path: 'assets/images/profile2.png',
     when: '20.3.6',
     number: 2,
     who: '바다',
@@ -158,7 +160,8 @@ var DUMMY_HISTORY = [
   History(
     goods_id: 'g1',
     user_id: 'u1',
-    image: 'assets/images/profile3.png',
+    goods_image_path: 'assets/images/goods1-1.png',
+    user_image_path: 'assets/images/profile3.png',
     when: '22.1.4',
     number: 3,
     who: '새우깡',
