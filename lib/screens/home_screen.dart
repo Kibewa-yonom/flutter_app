@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/goods.dart';
-import '../dummy_data.dart';
+import '../providers/goods_list.dart';
 import '../screens/product_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  final _goods = DUMMY_GOODS;
-
   Widget buildGoodsContainer(BuildContext context, Goods goods) {
     return InkWell(
       onTap: () => Navigator.of(context).pushNamed(
@@ -66,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       Icon(
-                        Icons.favorite_border,
+                        goods.like ? Icons.favorite : Icons.favorite_border,
                         color: Colors.black26,
                         size: 20,
                       ),
@@ -86,11 +85,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final goods = context.watch<GoodsList>().state.goods;
     return Container(
       child: ListView.builder(
-        itemCount: _goods.length,
+        itemCount: goods.length,
         itemBuilder: (BuildContext context, int i) {
-          return buildGoodsContainer(context, _goods[i]);
+          return buildGoodsContainer(context, goods[i]);
         },
       ),
     );

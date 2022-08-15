@@ -15,7 +15,7 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Map<String, Object>> _pages = [
     {
       'page': HomeScreen(),
-      'title': '체셔마켓',
+      'title': 'Connect Chain',
       'actions': <Widget>[
         IconButton(
           visualDensity: VisualDensity(horizontal: -3),
@@ -38,13 +38,13 @@ class _TabsScreenState extends State<TabsScreen> {
     },
     {
       'page': ChatListScreen(),
-      'title': '채팅',
+      'title': 'Chat',
       'actions': <Widget>[],
       'isFloating': false,
     },
     {
       'page': MyPageScreen(),
-      'title': '마이페이지',
+      'title': 'My Page',
       'actions': <Widget>[
         IconButton(
           visualDensity: VisualDensity(horizontal: -3),
@@ -80,7 +80,7 @@ class _TabsScreenState extends State<TabsScreen> {
           style: TextStyle(
             fontSize: 25,
             fontWeight: FontWeight.bold,
-            fontFamily: 'Jalnan',
+            fontFamily: 'PermanentMarker',
           ),
         ),
         actions: _pages[_selectedPageIndex]['actions'] as List<Widget>,
